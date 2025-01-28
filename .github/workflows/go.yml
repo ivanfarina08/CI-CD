@@ -26,7 +26,7 @@ jobs:
 
     - name: Aguardar banco iniciar
       run: |
-        until docker compose exec postgres pg_isready -U root -d root; do
+        until docker compose exec postgres pg_isready; do
           echo "Aguardando PostgreSQL iniciar..."
           sleep 5
         done
