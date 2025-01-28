@@ -42,6 +42,3 @@ jobs:
         name: projeto_compilado
         path: main
     
-    -name: docker
-      uses: ./.github/workflows/Docker.yml
-    
