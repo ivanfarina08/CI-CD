@@ -24,14 +24,18 @@ jobs:
     - name: Inicia o banco
       run: docker compose up -d postgres
 
+    - name: Aguardar banco iniciar
+      run: |
+        until docker compose exec postgres pg_isready -U root -d root; do
+          echo "Aguardando PostgreSQL iniciar..."
+          sleep 5
+        done
+
     - name: Lint
       uses: golangci/golangci-lint-action@v6
       with:
         version: v1.59
         args: controllers/ database/ models/ routes
-
-    - name: Aguardar banco iniciar
-      run: docker compose exec postgres pg_isready
 
     - name: Test
       run: DB_HOST=${{ secrets.DB_HOST }} DB_USER=${{ secrets.DB_USER }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} DB_NAME=${{ secrets.DB_NAME }} DB_PORT=${{ secrets.DB_PORT }} go test -v main_test.go
