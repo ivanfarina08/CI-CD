@@ -24,8 +24,11 @@ jobs:
     - name: Inicia o banco
       run: docker compose up -d postgres
 
-    - name: Saber se o docker esta rodando
-      run: docker ps
+    - name: Verificar status do container
+      run: docker ps -a
+
+    - name: Verificar logs do banco
+      run: docker logs $(docker ps -q --filter "name=postgres")
 
     - name: Aguardar banco iniciar
       run: docker compose exec postgres pg_isready
