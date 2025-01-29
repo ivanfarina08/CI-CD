@@ -32,4 +32,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ivanfarina08/go_ci:${{github.ref_name}}
+        tags: ivanfarina08/go_ci:1.0
