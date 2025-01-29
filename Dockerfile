@@ -6,6 +6,6 @@ WORKDIR /app
 
 ENV DB_HOST="" DB_USER="" DB_PASSWORD="" DB_NAME="" DB_PORT=""
 
-COPY main1 main
+COPY main main
 
 CMD [ "./main" ]
