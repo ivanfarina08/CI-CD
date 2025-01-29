@@ -44,7 +44,7 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: programa
+        name: programa-${{ github.run_id }}
         path: main
 
   docker:
