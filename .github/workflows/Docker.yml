@@ -17,7 +17,7 @@ jobs:
       uses: actions/download-artifact@v3.0.0
       with:
     # Artifact name
-        name: programa
+        name: projeto_compilado
       
     - name: Docker Login
   # You may pin to the exact commit or the version.
@@ -42,4 +42,4 @@ jobs:
     # Push is a shorthand for --output=type=registry
         push: true
     # List of tags
-        tags: leonardosartorello/go_ci:${{github.ref_name}}
+        tags: ivanfarina08/go_ci:${{github.ref_name}}
