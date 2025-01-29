@@ -4,7 +4,7 @@ EXPOSE 8000
 
 WORKDIR /app
 
-ENV DB_HOST=postgres DB_USER=root DB_PASSWORD=root DB_NAME=root DB_PORT=5432
+ENV DB_HOST=${{ secrets.DB_HOST }} DB_USER=${{ secrets.DB_USER }} DB_PASSWORD=${{ secrets.DB_PASSWORD }} DB_NAME=${{ secrets.DB_NAME }} DB_PORT=${{ secrets.DB_PORT }}
 
 COPY ./main main
 
