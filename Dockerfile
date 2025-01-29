@@ -4,8 +4,10 @@ EXPOSE 8000
 
 WORKDIR /app
 
-ENV DB_HOST="" DB_USER="" DB_PASSWORD="" DB_NAME="" DB_PORT=""
+ENV DB_HOST=postgres DB_USER=root DB_PASSWORD=root DB_NAME=root DB_PORT=5432
 
-COPY ./main main
+COPY ./main .
+
+RUN chmod +x ./main
 
 CMD [ "./main" ]
