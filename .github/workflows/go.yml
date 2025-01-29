@@ -41,3 +41,7 @@ jobs:
       with:
         name: projeto_compilado
         path: main
+
+  docker:
+    uses: ./.github/workflows/Docker.yml
+    secrets: inherit
